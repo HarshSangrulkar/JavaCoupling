@@ -1,4 +1,4 @@
-package com.tight.coupling;
+package com.loose.coupling;
 
 //A - MySQL, PostgreSQL
 //lets say we want to switch to a diff db
@@ -8,11 +8,9 @@ package com.tight.coupling;
 
 //which is not atall good
 
-public class UserDatabase {
-    // access database and use info inside db
-    // this section is gonna consist all the code that allows us to interact with
-    // the database
+public class UserDatabaseProvider implements UserDataProvider {
 
+    @Override
     public String getUserDetails() {
         // directly access db here
         return "User Details from Database";
